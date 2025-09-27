@@ -1,8 +1,8 @@
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-offset));
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 0;
   background: radial-gradient(1200px 600px at 10% 10%, rgba(37,99,235,0.15), transparent 60%),
               radial-gradient(1000px 500px at 90% 20%, rgba(245,158,11,0.12), transparent 60%),
               linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
@@ -52,6 +52,7 @@
   line-height: 1.1;
   margin-bottom: 1rem;
   color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .highlight {
@@ -254,7 +255,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 100px;
+    padding-top: 0;
   }
 
   .hero-title {

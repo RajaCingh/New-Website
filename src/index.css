@@ -21,6 +21,7 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --header-offset: 80px;
 }
 
 /* Dark theme variables */
@@ -48,6 +49,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: var(--header-offset);
 }
 
 /* Ensure base text uses theme-aware colors */
@@ -69,6 +71,7 @@ code {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-offset);
 }
 
 /* Custom scrollbar */
@@ -98,6 +101,32 @@ html {
 
 .section {
   padding: 4rem 0;
+  scroll-margin-top: var(--header-offset);
+}
+
+/* Common section headings used across pages */
+.section-header { margin-bottom: 2rem; }
+.section-title {
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  font-size: clamp(1.5rem, 1rem + 2.5vw, 2.25rem);
+}
+.section-subtitle {
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-size: clamp(0.95rem, 0.8rem + 0.8vw, 1.125rem);
+}
+
+/* Make media responsive by default */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Avoid content overflow on small screens */
+.container, .card, .section {
+  overflow-wrap: anywhere;
 }
 
 .text-center {
@@ -184,16 +213,30 @@ html {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  :root { --header-offset: 56px; }
   .container {
     padding: 0 1rem;
   }
   
   .section {
     padding: 2rem 0;
+    scroll-margin-top: var(--header-offset);
   }
   
   .btn {
     padding: 0.625rem 1.25rem;
     font-size: 0.8rem;
+  }
+
+  .section-header { margin-bottom: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .section {
+    padding: 1.5rem 0;
   }
 }

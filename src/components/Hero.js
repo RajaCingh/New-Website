@@ -61,7 +61,7 @@ const Hero = () => {
               className="hero-title"
               variants={itemVariants}
             >
-              Hi, I'm <span className="highlight">Raja Singh</span>
+              Hi, I'm <span className="highlight">Raja Babu Singh</span>
             </motion.h1>
             
             <motion.h2 
@@ -94,7 +94,7 @@ const Hero = () => {
               </motion.a>
               
               <motion.a
-                href="/RajaSinghCV.pdf"
+                href={process.env.PUBLIC_URL + '/RajaSinghCV.pdf'}
                 className="btn btn-outline"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -113,8 +113,8 @@ const Hero = () => {
             <div className="image-container">
               <div className="profile-image">
                 <img 
-                  src="/profile.jpg" 
-                  alt="Raja Singh - .NET Developer"
+                  src={process.env.PUBLIC_URL + '/profile.jpg'} 
+                  alt="Raja Babu Singh - .NET Developer"
                   className="profile-photo"
                 />
               </div>

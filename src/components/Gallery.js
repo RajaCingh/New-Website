@@ -3,15 +3,24 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
 import './Gallery.css';
 
-const images = [
-  // Add or replace with your own image paths in public folder
-  '/profile.jpg'
-  //'/favicon.png'
-  // Example: '/gallery/photo1.jpg', '/gallery/photo2.jpg'
+const builtInImages = [
+  process.env.PUBLIC_URL + '/profile.jpg'
 ];
 
 const Gallery = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [images, setImages] = useState(builtInImages);
+
+  React.useEffect(() => {
+    try {
+      const raw = localStorage.getItem('uploaded_gallery_images_v1');
+      const list = raw ? JSON.parse(raw) : [];
+      const uploaded = Array.isArray(list) ? list.map((it) => it.src) : [];
+      if (uploaded.length > 0) {
+        setImages([...uploaded, ...builtInImages]);
+      }
+    } catch {}
+  }, []);
 
   const openLightbox = (index) => setActiveIndex(index);
   const closeLightbox = () => setActiveIndex(null);

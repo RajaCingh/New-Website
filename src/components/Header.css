@@ -8,6 +8,7 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
   transition: all 0.3s ease;
+  --header-height: 80px;
 }
 
 .header.scrolled {
@@ -32,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  min-height: var(--header-height);
 }
 
 .logo {
@@ -48,11 +49,23 @@
   font-weight: 700;
   color: var(--primary-color);
   text-decoration: none;
+  background-image: linear-gradient(90deg, var(--primary-color), #ff6b6b, #f3a712, #4dabf7, var(--primary-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: logoGradient 6s ease infinite;
+}
+
+@keyframes logoGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .logo-image {
-  width: 120px;
-  height: 120px;
+  width: 72px;
+  height: 72px;
   border-radius: 8px;
 }
 
@@ -161,15 +174,19 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    --header-height: 56px;
+  }
+
   .nav {
     position: fixed;
-    top: 100%;
+    top: var(--header-height);
     left: 0;
     right: 0;
     background: var(--bg-primary);
     border-top: 1px solid var(--border-color);
     box-shadow: var(--shadow-lg);
-    transform: translateY(-100%);
+    transform: translateY(-12px);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -179,6 +196,11 @@
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+  }
+
+  .logo-image {
+    width: 48px;
+    height: 48px;
   }
 
   .nav-list {

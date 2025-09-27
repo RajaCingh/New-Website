@@ -64,8 +64,7 @@ const About = () => {
             <p className="about-description">
               I'm a passionate .NET Developer with over 2 years of experience in building 
               robust and scalable software solutions. My journey in software development 
-              began during my Bachelor's in Information Technology at Anna University, 
-              Chennai, where I developed a strong foundation in programming and system design.
+              began during my Bachelor's in Information Technology, I developed a strong foundation in programming and system design.
             </p>
             <p className="about-description">
               Currently working as a Software Developer at 

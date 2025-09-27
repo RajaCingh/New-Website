@@ -33,6 +33,7 @@ const Header = ({ onNavigate }) => {
     { id: 'projects', label: 'Projects' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact' }
+    //{ id: 'admin', label: 'Admin' }
   ];
 
   return (
@@ -49,7 +50,8 @@ const Header = ({ onNavigate }) => {
             whileHover={{ scale: 1.05 }}
             onClick={() => goTo('hero')}
           >
-            <img src="/favicon.png" alt="Raja Singh" className="logo-image" />
+            <img src={process.env.PUBLIC_URL + '/favicon.png'} alt="Raja Singh" className="logo-image" />
+            <span className="logo-text">Raja Singh</span>
           </motion.div>
 
           <nav className={`nav ${isMobileMenuOpen ? 'nav-open' : ''}`}>

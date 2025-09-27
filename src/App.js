@@ -10,9 +10,10 @@ import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import Projects from './components/Projects';
 import AnimatedBackground from './components/AnimatedBackground';
+import Admin from './components/Admin';
 
 function App() {
-  const sectionIds = ['hero', 'about', 'experience', 'education', 'skills', 'projects', 'gallery', 'contact'];
+  const sectionIds = ['hero', 'about', 'experience', 'education', 'skills', 'projects', 'gallery', 'contact', 'admin'];
   const getInitialSection = () => {
     const hash = window.location.hash?.replace('#', '');
     return sectionIds.includes(hash) ? hash : 'hero';
@@ -56,6 +57,8 @@ function App() {
         return <Gallery />;
       case 'contact':
         return <Contact />;
+      case 'admin':
+        return <Admin />;
       case 'hero':
       default:
         return <Hero />;

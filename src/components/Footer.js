@@ -12,17 +12,20 @@ const Footer = () => {
     {
       name: 'GitHub',
       url: 'https://github.com/RajaCingh',
-      icon: FaGithub
+      icon: FaGithub,
+      color: '#333'
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/rajacingh/',
-      icon: FaLinkedin
+      icon: FaLinkedin,
+      color: '#0077b5'
     },
     {
       name: 'Instagram',
       url: 'https://www.instagram.com/raja.cingh?igsh=MTk3aXA3NXhrZmt6aQ==',
-      icon: FaInstagram
+      icon: FaInstagram,
+      color: '#E4405F'
     }
   ];
 
@@ -85,6 +88,7 @@ const Footer = () => {
                   className="social-link"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
+                  style={{ '--color': social.color }}
                 >
                   <social.icon />
                 </motion.a>
