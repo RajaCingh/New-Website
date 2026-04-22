@@ -64,11 +64,11 @@ const About = () => {
             <p className="about-description">
               I'm a passionate .NET Developer with over 2 years of experience in building 
               robust and scalable software solutions. My journey in software development 
-              began during my Bachelor's in Information Technology, I developed a strong foundation in programming and system design.
+              began during my Bachelor Of Technoogy in Information Technology, I developed a strong foundation in programming and system design.
             </p>
             <p className="about-description">
               Currently working as a Software Developer at 
-              <a href="https://www.technables.com/" target="_blank" rel="noopener noreferrer"> Technables IT Solution Pvt. Ltd</a>,
+              <a href="#" target="_blank" rel="noopener noreferrer"></a>,
               I specialize in .NET framework, ASP.NET, and modern web technologies. I have 
               a proven track record of delivering high-quality applications and enjoy 
               solving complex technical challenges.
